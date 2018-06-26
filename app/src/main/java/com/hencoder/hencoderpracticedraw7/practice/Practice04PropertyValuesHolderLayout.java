@@ -1,5 +1,7 @@
 package com.hencoder.hencoderpracticedraw7.practice;
 
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -40,6 +42,15 @@ public class Practice04PropertyValuesHolderLayout extends RelativeLayout {
                 // 第三个： alpha 从 0 到 1
 
                 // 然后，用 ObjectAnimator.ofPropertyValuesHolder() 把三个属性合并，创建 Animator 然后执行
+
+                PropertyValuesHolder scaleX = PropertyValuesHolder.ofFloat("scaleX", 0, 1);
+                PropertyValuesHolder scaleY = PropertyValuesHolder.ofFloat("scaleY", 0, 1);
+                PropertyValuesHolder alpha = PropertyValuesHolder.ofFloat("alpha", 0, 1);
+
+
+                ObjectAnimator.ofPropertyValuesHolder(view , scaleX , scaleY , alpha)
+                        .setDuration(2000)
+                        .start();
             }
         });
     }

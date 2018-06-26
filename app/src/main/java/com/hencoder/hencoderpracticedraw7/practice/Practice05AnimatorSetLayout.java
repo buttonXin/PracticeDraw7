@@ -43,12 +43,15 @@ public class Practice05AnimatorSetLayout extends RelativeLayout {
                 ObjectAnimator animator3 = ObjectAnimator.ofFloat(view, "rotation", 0, 1080);
                 animator3.setDuration(1000);
 
-                AnimatorSet animatorSet = new AnimatorSet();
+                AnimatorSet set = new AnimatorSet();
                 // 用 AnimatorSet 的方法来让三个动画协作执行
                 // 要求 1： animator1 先执行，animator2 在 animator1 完成后立即开始
                 // 要求 2： animator2 和 animator3 同时开始
 
-                animatorSet.start();
+                set.play(animator1).before(animator2);
+
+                set.playTogether(animator2,animator3);
+                set.start();
             }
         });
     }

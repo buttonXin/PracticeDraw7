@@ -1,3 +1,17 @@
+
+- 学习没有用过的api
+
+```
+    //第一个参数是进行时间的百分比， 第二个参数是值
+    Keyframe keyframe1 = Keyframe.ofFloat(0 , 0);
+    Keyframe keyframe2 = Keyframe.ofFloat(0.7f , 100);
+    Keyframe keyframe3 = Keyframe.ofFloat(1 , 80);
+
+    PropertyValuesHolder progress = PropertyValuesHolder.ofKeyframe("progress", keyframe1, keyframe2, keyframe3);
+
+    ObjectAnimator.ofPropertyValuesHolder(view , progress).setDuration(1000).start();
+```
+
 ![](images/icon.png)
 
 HenCoder 绘制 7 属性动画 练习项目

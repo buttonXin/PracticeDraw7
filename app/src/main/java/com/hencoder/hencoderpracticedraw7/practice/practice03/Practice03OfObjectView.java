@@ -56,6 +56,8 @@ public class Practice03OfObjectView extends View {
         float width = getWidth() - innerPaddingLeft - innterPaddingRight - RADIUS * 2;
         float height = getHeight() - innterPaddingTop - innterPaddingBottom - RADIUS * 2;
 
-        canvas.drawCircle(innerPaddingLeft + RADIUS + width * position.x, innterPaddingTop + RADIUS + height * position.y, RADIUS, paint);
+        canvas.drawCircle(innerPaddingLeft + RADIUS + width * position.x,
+                innterPaddingTop + RADIUS + height * position.y,
+                RADIUS, paint);
     }
 }
